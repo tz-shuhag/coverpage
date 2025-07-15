@@ -52,33 +52,26 @@ content {
   gap: 1.6rem;
   /* When Assignment Topic is Null */
 }
-/* New logo container styles */
+/* New logo styles - positioned absolutely to not affect flow */
 content .logo-container {
-  width: 100%;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
-  padding-top: 2rem;
+  z-index: 1;
 }
 content .logo-container img {
-  max-height: 80px;
+  max-height: 60px; /* Smaller size to fit existing layout */
   width: auto;
-  max-width: 100%;
+  max-width: 80%;
 }
-/* Adjust existing margins to account for logo */
-content span[name=ah], 
-content span[name=sn] {
-  margin-top: 4rem; /* Reduced from 8rem */
-}
-content:has(> .outline > .none) span[name=ah], 
-content:has(> .outline > .none) span[name=sn] {
-  margin-top: 7.4rem; /* Reduced from 11.4rem */
-}
-
 @media only screen {
   content {
     max-height: 141.4285714286svw;
     max-width: 70.7070707071svh;
+    position: relative; /* Needed for absolute positioning of logo */
   }
 }
 content div {
@@ -162,11 +155,17 @@ content span[name=sd]::before {
   content: "Date of Submission:";
   padding-right: 0.5rem;
 }
+content span[name=ah], content span[name=sn] {
+  margin-top: 8rem; /* Original value maintained */
+}
 content span[name=sd] {
   margin: 5rem 0;
 }
 content span.none {
   display: none;
+}
+content:has(> .outline > .none) span[name=ah], content:has(> .outline > .none) span[name=sn] {
+  margin-top: 11.4rem; /* Original value maintained */
 }
 
 #print, #download {
