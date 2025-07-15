@@ -51,26 +51,24 @@ content {
   justify-content: flex-start;
   flex-direction: column;
   gap: 1.6rem;
-  padding-top: 4rem; /* ADD THIS for top margin to prevent clipping */
+  padding-top: 4rem;
   box-sizing: border-box;
 }
 
-/* Make logo part of normal flow */
 content .logo-container {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
 
 content .logo-container img {
-  max-height: 100px;
+  max-height: 80px;
   width: auto;
   max-width: 80%;
   display: block;
-  margin: 0 auto;
+  margin: 4rem;
 }
 
-/* Optional responsive constraints */
 @media only screen {
   content {
     max-height: 141.4285714286svw;
@@ -188,7 +186,6 @@ content:has(> .outline > .none) span[name=sn] {
   margin-top: 11.4rem;
 }
 
-/* Button styling */
 #print, #download {
   display: flex;
   align-items: center;
