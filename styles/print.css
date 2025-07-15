@@ -1,9 +1,7 @@
-/* Base reset */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Disable text selection */
 .no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -11,7 +9,6 @@
   user-select: none;
 }
 
-/* General HTML/body setup */
 body,
 html {
   height: 100%;
@@ -51,32 +48,29 @@ content {
   background: #ffffff;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 1.6rem;
-  position: relative; /* Ensures absolutely positioned elements inside are based on this */
+  padding-top: 4rem; /* ADD THIS for top margin to prevent clipping */
+  box-sizing: border-box;
 }
 
-/* Logo Container */
+/* Make logo part of normal flow */
 content .logo-container {
-  position: absolute;
-  top: 2rem;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: center;
-  z-index: 1;
+  margin-top: 2rem;
 }
 
 content .logo-container img {
-  max-height: 100px; /* Increased for print visibility */
+  max-height: 100px;
   width: auto;
   max-width: 80%;
   display: block;
   margin: 0 auto;
 }
 
-/* Remove screen-only constraints */
+/* Optional responsive constraints */
 @media only screen {
   content {
     max-height: 141.4285714286svw;
@@ -84,7 +78,6 @@ content .logo-container img {
   }
 }
 
-/* Flex Layouts */
 content div {
   display: flex;
   align-items: center;
@@ -101,11 +94,11 @@ content div.outline {
   width: 70%;
   max-width: 70%;
 }
+
 content div.outline:has(.none) {
   display: none;
 }
 
-/* Text Styles */
 content span {
   text-align: center;
 }
@@ -161,7 +154,6 @@ content span[name=in]::before {
   content: "Intake:";
   padding-right: 0.5rem;
 }
-
 content span[name=sb]:has(+ span + span[name=ss]:not(.none))::after {
   content: ",";
   padding-right: 0.5rem;
@@ -182,6 +174,7 @@ content span[name=sd]::before {
 content span[name=ah], content span[name=sn] {
   margin-top: 8rem;
 }
+
 content span[name=sd] {
   margin: 5rem 0;
 }
@@ -195,7 +188,7 @@ content:has(> .outline > .none) span[name=sn] {
   margin-top: 11.4rem;
 }
 
-/* Button styles */
+/* Button styling */
 #print, #download {
   display: flex;
   align-items: center;
@@ -213,6 +206,7 @@ content:has(> .outline > .none) span[name=sn] {
               0 4px 8px 0 rgba(0, 0, 0, 0.2),
               0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 #print:active, #download:active {
   transform: translateY(3px);
 }
@@ -230,11 +224,11 @@ content:has(> .outline > .none) span[name=sn] {
 #download:hover, #download:focus {
   background: #ff6c10;
 }
+
 .none {
   display: none;
 }
 
-/* ✅ Print Fixes */
 @media print {
   body {
     background: white !important;
@@ -245,22 +239,19 @@ content:has(> .outline > .none) span[name=sn] {
   }
 
   .logo-container {
-    position: static !important;
+    margin-top: 2rem;
     margin-bottom: 1.5rem;
-    text-align: center;
   }
 
   .logo-container img {
     max-height: 100px !important;
     max-width: 80% !important;
-    width: auto !important;
-    height: auto !important;
     display: block;
     margin: 0 auto;
   }
 
   content {
-    padding: 1rem;
+    padding: 2rem 1rem;
     box-sizing: border-box;
   }
 }
