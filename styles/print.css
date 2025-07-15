@@ -52,6 +52,29 @@ content {
   gap: 1.6rem;
   /* When Assignment Topic is Null */
 }
+/* New logo container styles */
+content .logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+content .logo-container img {
+  max-height: 80px;
+  width: auto;
+  max-width: 100%;
+}
+/* Adjust existing margins to account for logo */
+content span[name=ah], 
+content span[name=sn] {
+  margin-top: 4rem; /* Reduced from 8rem */
+}
+content:has(> .outline > .none) span[name=ah], 
+content:has(> .outline > .none) span[name=sn] {
+  margin-top: 7.4rem; /* Reduced from 11.4rem */
+}
+
 @media only screen {
   content {
     max-height: 141.4285714286svw;
@@ -139,17 +162,11 @@ content span[name=sd]::before {
   content: "Date of Submission:";
   padding-right: 0.5rem;
 }
-content span[name=ah], content span[name=sn] {
-  margin-top: 8rem;
-}
 content span[name=sd] {
   margin: 5rem 0;
 }
 content span.none {
   display: none;
-}
-content:has(> .outline > .none) span[name=ah], content:has(> .outline > .none) span[name=sn] {
-  margin-top: 11.4rem;
 }
 
 #print, #download {
