@@ -183,7 +183,7 @@ content span.none {
 
 content:has(> .outline > .none) span[name=ah],
 content:has(> .outline > .none) span[name=sn] {
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 #print, #download {
