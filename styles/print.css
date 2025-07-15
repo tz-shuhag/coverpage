@@ -55,7 +55,7 @@ content {
 /* New logo styles - positioned absolutely to not affect flow */
 content .logo-container {
   position: absolute;
-  top: 2rem;
+  top: 3rem;
   left: 0;
   right: 0;
   display: flex;
