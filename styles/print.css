@@ -172,11 +172,11 @@ content span[name=sd]::before {
 }
 
 content span[name=ah], content span[name=sn] {
-  margin-top: 8rem;
+  margin-top: 4rem;
 }
 
 content span[name=sd] {
-  margin: 5rem 0;
+  margin: 2rem 0;
 }
 
 content span.none {
