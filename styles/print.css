@@ -52,26 +52,23 @@ content {
   gap: 1.6rem;
   /* When Assignment Topic is Null */
 }
-/* New logo styles - positioned absolutely to not affect flow */
+/* Logo container styles */
 content .logo-container {
-  position: absolute;
-  top: 3rem;
-  left: 0;
-  right: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
-  z-index: 1;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
 }
 content .logo-container img {
-  max-height: 60px; /* Smaller size to fit existing layout */
+  max-height: 80px;
   width: auto;
-  max-width: 80%;
+  max-width: 100%;
 }
 @media only screen {
   content {
     max-height: 141.4285714286svw;
     max-width: 70.7070707071svh;
-    position: relative; /* Needed for absolute positioning of logo */
   }
 }
 content div {
@@ -94,8 +91,6 @@ content div.outline:has(.none) {
 }
 content span {
   text-align: center;
-  /* Margins */
-  /* Display */
 }
 content span[name=cc], content span[name=cn], content span[name=ah] {
   font-weight: 700;
@@ -155,17 +150,28 @@ content span[name=sd]::before {
   content: "Date of Submission:";
   padding-right: 0.5rem;
 }
-content span[name=ah], content span[name=sn] {
-  margin-top: 8rem; /* Original value maintained */
+
+/* Adjusted spacing */
+content span[name=ah] {
+  margin-top: 4rem; /* Reduced from 8rem */
+}
+content span[name=sn] {
+  margin-top: 2rem; /* Reduced spacing after Assignment Topic */
+}
+content span[name=td] {
+  margin-bottom: 0.8rem; /* Reduced spacing before Course Name */
 }
 content span[name=sd] {
-  margin: 5rem 0;
+  margin: 2.5rem 0; /* Reduced from 5rem */
 }
 content span.none {
   display: none;
 }
-content:has(> .outline > .none) span[name=ah], content:has(> .outline > .none) span[name=sn] {
-  margin-top: 11.4rem; /* Original value maintained */
+content:has(> .outline > .none) span[name=ah] {
+  margin-top: 5.7rem; /* Reduced from 11.4rem */
+}
+content:has(> .outline > .none) span[name=sn] {
+  margin-top: 2rem; /* Maintain reduced spacing */
 }
 
 #print, #download {
