@@ -140,16 +140,16 @@ content span[name=sd]::before {
   padding-right: 0.5rem;
 }
 content span[name=ah], content span[name=sn] {
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 content span[name=sd] {
-  margin: 5rem 0;
+  margin: 1rem 0;
 }
 content span.none {
   display: none;
 }
 content:has(> .outline > .none) span[name=ah], content:has(> .outline > .none) span[name=sn] {
-  margin-top: 11.4rem;
+  margin-top: 0rem;
 }
 
 #print, #download {
